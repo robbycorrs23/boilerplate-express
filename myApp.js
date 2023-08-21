@@ -8,6 +8,6 @@ app.get("/", function (req, res) {
   res.sendFile(absolutePath);
 });
 
-app.use(express.static(publicPath));
+app.use("/public", express.static(publicPath));
 
 module.exports = app;
