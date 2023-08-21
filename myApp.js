@@ -13,10 +13,10 @@ app.get("/", function (req, res) {
 app.use("/public", express.static(publicPath));
 
 app.get("/json", function (req, res) {
-  let messageForm = (process.env.MESSAGE_STYLE = "uppercase"
+  let response = (process.env.MESSAGE_STYLE = "uppercase"
     ? "Hello json".toUpperCase()
     : "Hello json");
-  res.json({ message: messageForm });
+  res.json({ message: response });
 });
 
 module.exports = app;
