@@ -21,7 +21,8 @@ app.get("/json", function (req, res) {
 });
 
 app.use((req, res, next) => {
-  console.log(`HTTP Method Used: ${req.method}`); // Logs the HTTP method used (e.g., 'GET', 'POST')
+  var string = req.method + " " + req.path + " - " + req.ip;
+  console.log(string);
   next(); // Move to the next middleware or route handler
 });
 
