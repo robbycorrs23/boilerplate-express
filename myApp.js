@@ -20,4 +20,9 @@ app.get("/json", function (req, res) {
   res.json({ message: message });
 });
 
+app.use("/public", function (req, res, next) {
+  console.log(req.method(), req.path() - req.ip());
+  next();
+});
+
 module.exports = app;
