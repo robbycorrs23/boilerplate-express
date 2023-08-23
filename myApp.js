@@ -20,9 +20,9 @@ app.get("/json", function (req, res) {
   res.json({ message: message });
 });
 
-app.use("/public", function (req, res, next) {
-  console.log(req.method(), req.path() - req.ip());
-  next();
+app.use((req, res, next) => {
+  console.log(`HTTP Method Used: ${req.method}`); // Logs the HTTP method used (e.g., 'GET', 'POST')
+  next(); // Move to the next middleware or route handler
 });
 
 module.exports = app;
